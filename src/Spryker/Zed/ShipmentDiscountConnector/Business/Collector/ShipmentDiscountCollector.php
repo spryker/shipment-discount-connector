@@ -60,12 +60,6 @@ class ShipmentDiscountCollector extends ShipmentDiscountWithoutMultiShipmentColl
         return $discountableItems;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     * @param \Generated\Shared\Transfer\ShipmentTransfer $shipmentTransfer
-     *
-     * @return \Generated\Shared\Transfer\ExpenseTransfer|null
-     */
     protected function findQuoteExpenseByShipment(QuoteTransfer $quoteTransfer, ShipmentTransfer $shipmentTransfer): ?ExpenseTransfer
     {
         $itemShipmentKey = $this->shipmentService->getShipmentHashKey($shipmentTransfer);

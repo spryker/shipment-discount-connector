@@ -70,9 +70,6 @@ class ShipmentMethodDecisionRuleTest extends Unit
         }
     }
 
-    /**
-     * @return array
-     */
     public function shipmentMethodDecisionRuleShouldMatchDifferentShipmentMethodsDataProvider(): array
     {
         return [
@@ -82,9 +79,6 @@ class ShipmentMethodDecisionRuleTest extends Unit
         ];
     }
 
-    /**
-     * @return array
-     */
     protected function getDataWith1QuoteLevelShipmentAndMethodForSingleShipmentIsMatched(): array
     {
         $shipmentBuilder = (new ShipmentBuilder())->withMethod(['idShipmentMethod' => 1]);
@@ -102,9 +96,6 @@ class ShipmentMethodDecisionRuleTest extends Unit
         ];
     }
 
-    /**
-     * @return array
-     */
     protected function getDataWith3ItemsAnd2ItemLevelShipmentsAndMethodsForSingleShipmentIsMatched(): array
     {
         $shipmentTransfer1 = (new ShipmentBuilder())->withMethod(['idShipmentMethod' => 1])->build();
@@ -127,9 +118,6 @@ class ShipmentMethodDecisionRuleTest extends Unit
         ];
     }
 
-    /**
-     * @return array
-     */
     protected function getDataWith3ItemsAnd2ItemLevelShipmentsAndMethodsForMultipleShipmentIsMatched(): array
     {
         $shipmentTransfer1 = (new ShipmentBuilder())->withMethod(['idShipmentMethod' => 1])->build();
@@ -153,12 +141,6 @@ class ShipmentMethodDecisionRuleTest extends Unit
         ];
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     * @param \Generated\Shared\Transfer\ShipmentTransfer $shipmentTransfer
-     *
-     * @return \Generated\Shared\Transfer\ItemTransfer
-     */
     protected function addNewItemWithShipmentIntoQuoteTransfer(QuoteTransfer $quoteTransfer, ShipmentTransfer $shipmentTransfer): ItemTransfer
     {
         $itemTransfer = (new ItemBuilder())->build();
@@ -169,11 +151,6 @@ class ShipmentMethodDecisionRuleTest extends Unit
         return $itemTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShipmentMethodTransfer $shipmentMethodTransfer
-     *
-     * @return \Generated\Shared\Transfer\ClauseTransfer
-     */
     protected function createClauseTransferWithShipmentMethod(ShipmentMethodTransfer $shipmentMethodTransfer): ClauseTransfer
     {
         return (new ClauseBuilder([

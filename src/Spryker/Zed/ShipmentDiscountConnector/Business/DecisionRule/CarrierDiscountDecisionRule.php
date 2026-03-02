@@ -40,12 +40,6 @@ class CarrierDiscountDecisionRule extends CarrierDiscountDecisionRuleWithoutMult
         return $this->isSatisfiedItemShipmentCarrier($expenseTransfer->getShipment(), $clauseTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShipmentTransfer $shipmentTransfer
-     * @param \Generated\Shared\Transfer\ClauseTransfer $clauseTransfer
-     *
-     * @return bool
-     */
     protected function isSatisfiedItemShipmentCarrier(ShipmentTransfer $shipmentTransfer, ClauseTransfer $clauseTransfer): bool
     {
         $idShipmentCarrier = $this->getIdShipmentCarrier($shipmentTransfer);
@@ -57,11 +51,6 @@ class CarrierDiscountDecisionRule extends CarrierDiscountDecisionRuleWithoutMult
         return false;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShipmentTransfer $shipmentTransfer
-     *
-     * @return int|null
-     */
     protected function getIdShipmentCarrier(ShipmentTransfer $shipmentTransfer): ?int
     {
         if ($shipmentTransfer->getCarrier()) {

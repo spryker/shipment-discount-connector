@@ -46,9 +46,6 @@ class MultiShipmentCollectorStrategyResolver implements MultiShipmentCollectorSt
      */
     protected $strategyContainer;
 
-    /**
-     * @param array $strategyContainer
-     */
     public function __construct(array $strategyContainer)
     {
         $this->strategyContainer = $strategyContainer;

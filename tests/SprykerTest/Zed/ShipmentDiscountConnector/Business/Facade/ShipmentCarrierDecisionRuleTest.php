@@ -70,9 +70,6 @@ class ShipmentCarrierDecisionRuleTest extends Unit
         }
     }
 
-    /**
-     * @return array
-     */
     public function shipmentCarrierDecisionRuleShouldMatchDifferentShipmentCarriersDataProvider(): array
     {
         return [
@@ -82,9 +79,6 @@ class ShipmentCarrierDecisionRuleTest extends Unit
         ];
     }
 
-    /**
-     * @return array
-     */
     protected function getDataWith1QuoteLevelShipmentAndCarrierForSingleCarrierIsMatched(): array
     {
         $shipmentBuilder = (new ShipmentBuilder())->withCarrier();
@@ -102,9 +96,6 @@ class ShipmentCarrierDecisionRuleTest extends Unit
         ];
     }
 
-    /**
-     * @return array
-     */
     protected function getDataWith3ItemsAnd2ItemLevelShipmentsAndCarriersForSingleCarrierIsMatched(): array
     {
         $shipmentCarrierTransfer1 = (new ShipmentCarrierBuilder())->build();
@@ -130,9 +121,6 @@ class ShipmentCarrierDecisionRuleTest extends Unit
         ];
     }
 
-    /**
-     * @return array
-     */
     protected function getDataWith3ItemsAnd2ItemLevelShipmentsAndCarriersForMultipleCarrierIsMatched(): array
     {
         $shipmentCarrierTransfer1 = (new ShipmentCarrierBuilder())->build();
@@ -158,12 +146,6 @@ class ShipmentCarrierDecisionRuleTest extends Unit
         ];
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     * @param \Generated\Shared\Transfer\ShipmentCarrierTransfer $shipmentCarrierTransfer
-     *
-     * @return \Generated\Shared\Transfer\ItemTransfer
-     */
     protected function addNewItemWithShipmentCarrierIntoQuoteTransfer(
         QuoteTransfer $quoteTransfer,
         ShipmentCarrierTransfer $shipmentCarrierTransfer
@@ -178,11 +160,6 @@ class ShipmentCarrierDecisionRuleTest extends Unit
         return $itemTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShipmentCarrierTransfer $shipmentCarrierTransfer
-     *
-     * @return \Generated\Shared\Transfer\ClauseTransfer
-     */
     protected function createClauseTransferWithShipmentCarrier(ShipmentCarrierTransfer $shipmentCarrierTransfer): ClauseTransfer
     {
         return (new ClauseBuilder([

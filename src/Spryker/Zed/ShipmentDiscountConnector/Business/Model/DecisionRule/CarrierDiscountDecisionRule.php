@@ -30,10 +30,6 @@ class CarrierDiscountDecisionRule implements ShipmentDiscountDecisionRuleInterfa
      */
     protected $shipmentFacade;
 
-    /**
-     * @param \Spryker\Zed\ShipmentDiscountConnector\Dependency\Facade\ShipmentDiscountConnectorToDiscountInterface $discountFacade
-     * @param \Spryker\Zed\ShipmentDiscountConnector\Dependency\Facade\ShipmentDiscountConnectorToShipmentInterface $shipmentFacade
-     */
     public function __construct(
         ShipmentDiscountConnectorToDiscountInterface $discountFacade,
         ShipmentDiscountConnectorToShipmentInterface $shipmentFacade

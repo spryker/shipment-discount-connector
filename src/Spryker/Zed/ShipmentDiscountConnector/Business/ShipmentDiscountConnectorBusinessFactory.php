@@ -54,9 +54,6 @@ class ShipmentDiscountConnectorBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ShipmentDiscountConnector\Business\Collector\ShipmentDiscountCollectorInterface
-     */
     public function createCarrierDiscountCollectorWithMultiShipment(): ShipmentDiscountCollectorInterface
     {
         return new ShipmentDiscountCollectorWithMultiShipment(
@@ -78,9 +75,6 @@ class ShipmentDiscountConnectorBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ShipmentDiscountConnector\Business\DecisionRule\ShipmentDiscountDecisionRuleInterface
-     */
     public function createCarrierDiscountDecisionRuleWithMultiShipment(): ShipmentDiscountDecisionRuleInterface
     {
         return new CarrierDiscountDecisionRuleWithMultiShipment(
@@ -102,9 +96,6 @@ class ShipmentDiscountConnectorBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ShipmentDiscountConnector\Business\Collector\ShipmentDiscountCollectorInterface
-     */
     public function createMethodDiscountCollectorWithMultiShipment(): ShipmentDiscountCollectorInterface
     {
         return new ShipmentDiscountCollectorWithMultiShipment(
@@ -125,9 +116,6 @@ class ShipmentDiscountConnectorBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ShipmentDiscountConnector\Business\DecisionRule\ShipmentDiscountDecisionRuleInterface
-     */
     public function createMethodDiscountDecisionRuleWithMultiShipment(): ShipmentDiscountDecisionRuleInterface
     {
         return new MethodDiscountDecisionRuleWithMultiShipment(
@@ -148,9 +136,6 @@ class ShipmentDiscountConnectorBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ShipmentDiscountConnector\Business\Collector\ShipmentDiscountCollectorInterface
-     */
     public function createShipmentPriceDiscountCollectorWithMultiShipment(): ShipmentDiscountCollectorInterface
     {
         return new ShipmentDiscountCollectorWithMultiShipment(
@@ -172,9 +157,6 @@ class ShipmentDiscountConnectorBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ShipmentDiscountConnector\Business\DecisionRule\ShipmentDiscountDecisionRuleInterface
-     */
     public function createShipmentPriceDiscountDecisionRuleWithMultiShipment(): ShipmentDiscountDecisionRuleInterface
     {
         return new ShipmentPriceDiscountDecisionRuleWithMultiShipment(
@@ -208,9 +190,6 @@ class ShipmentDiscountConnectorBusinessFactory extends AbstractBusinessFactory
         return $this->getProvidedDependency(ShipmentDiscountConnectorDependencyProvider::FACADE_MONEY);
     }
 
-    /**
-     * @return \Spryker\Zed\ShipmentDiscountConnector\Dependency\Service\ShipmentDiscountConnectorToShipmentServiceInterface
-     */
     public function getShipmentService(): ShipmentDiscountConnectorToShipmentServiceInterface
     {
         return $this->getProvidedDependency(ShipmentDiscountConnectorDependencyProvider::SERVICE_SHIPMENT);

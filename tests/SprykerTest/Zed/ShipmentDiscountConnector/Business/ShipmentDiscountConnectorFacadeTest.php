@@ -39,9 +39,6 @@ class ShipmentDiscountConnectorFacadeTest extends Unit
      */
     protected $tester;
 
-    /**
-     * @return void
-     */
     public function testIsCarrierSatisfiedBy(): void
     {
         $shipmentCarrierTransfer = (new ShipmentCarrierTransfer())
@@ -75,9 +72,6 @@ class ShipmentDiscountConnectorFacadeTest extends Unit
         $this->assertTrue($result);
     }
 
-    /**
-     * @return void
-     */
     public function testIsMethodSatisfiedBy(): void
     {
         $shipmentMethodTransfer = (new ShipmentMethodTransfer())
@@ -111,9 +105,6 @@ class ShipmentDiscountConnectorFacadeTest extends Unit
         $this->assertTrue($result);
     }
 
-    /**
-     * @return void
-     */
     public function testIsPriceSatisfiedBy(): void
     {
         $itemTransfer = new ItemTransfer();
@@ -143,9 +134,6 @@ class ShipmentDiscountConnectorFacadeTest extends Unit
         $this->assertTrue($result);
     }
 
-    /**
-     * @return void
-     */
     public function testCollectDiscountByShipmentCarrier(): void
     {
         $shipmentCarrierTransfer = (new ShipmentCarrierTransfer())
@@ -179,9 +167,6 @@ class ShipmentDiscountConnectorFacadeTest extends Unit
         $this->assertCount(1, $result);
     }
 
-    /**
-     * @return void
-     */
     public function testCollectDiscountByShipmentMethod(): void
     {
         $shipmentMethodTransfer = (new ShipmentMethodTransfer())
@@ -214,9 +199,6 @@ class ShipmentDiscountConnectorFacadeTest extends Unit
         $this->assertCount(1, $result);
     }
 
-    /**
-     * @return void
-     */
     public function testCollectDiscountByShipmentPrice(): void
     {
         $itemTransfer = new ItemTransfer();
@@ -244,9 +226,6 @@ class ShipmentDiscountConnectorFacadeTest extends Unit
         $this->assertCount(1, $result);
     }
 
-    /**
-     * @return void
-     */
     public function testCollectDiscountByShipmentCarrierNegative(): void
     {
         $shipmentCarrierTransfer = (new ShipmentCarrierTransfer())
@@ -280,9 +259,6 @@ class ShipmentDiscountConnectorFacadeTest extends Unit
         $this->assertCount(0, $result);
     }
 
-    /**
-     * @return void
-     */
     public function testCollectDiscountByShipmentMethodNegative(): void
     {
         $shipmentMethodTransfer = (new ShipmentMethodTransfer())
@@ -315,9 +291,6 @@ class ShipmentDiscountConnectorFacadeTest extends Unit
         $this->assertCount(0, $result);
     }
 
-    /**
-     * @return void
-     */
     public function testCollectDiscountByShipmentPriceNegative(): void
     {
         $itemTransfer = new ItemTransfer();
@@ -345,9 +318,6 @@ class ShipmentDiscountConnectorFacadeTest extends Unit
         $this->assertCount(0, $result);
     }
 
-    /**
-     * @return \Spryker\Zed\ShipmentDiscountConnector\Business\ShipmentDiscountConnectorFacadeInterface
-     */
     protected function createFacade(): ShipmentDiscountConnectorFacadeInterface
     {
         return $this->tester->getLocator()->shipmentDiscountConnector()->facade();

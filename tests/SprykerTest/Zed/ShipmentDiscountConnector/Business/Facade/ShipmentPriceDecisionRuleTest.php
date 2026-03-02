@@ -72,9 +72,6 @@ class ShipmentPriceDecisionRuleTest extends Unit
         }
     }
 
-    /**
-     * @return array
-     */
     public function shipmentPriceDecisionRuleShouldMatchDifferentShipmentExpensePricesDataProvider(): array
     {
         return [
@@ -84,9 +81,6 @@ class ShipmentPriceDecisionRuleTest extends Unit
         ];
     }
 
-    /**
-     * @return array
-     */
     protected function getDataWith1ShipmentExpenseWithQuoteLevelShipment(): array
     {
         $quoteTransfer = (new QuoteBuilder())
@@ -107,9 +101,6 @@ class ShipmentPriceDecisionRuleTest extends Unit
         ];
     }
 
-    /**
-     * @return array
-     */
     protected function getDataWith1ShipmentExpenseWithItemLevelShipment(): array
     {
         $shipmentTransfer1 = (new ShipmentBuilder())->withMethod(['idShipmentMethod' => 1])->build();
@@ -132,9 +123,6 @@ class ShipmentPriceDecisionRuleTest extends Unit
         ];
     }
 
-    /**
-     * @return array
-     */
     protected function getDataWith2ShipmentExpensesWithItemLevelShipment(): array
     {
         $shipmentTransfer1 = (new ShipmentBuilder())->withMethod(['idShipmentMethod' => 1])->build();
@@ -158,13 +146,6 @@ class ShipmentPriceDecisionRuleTest extends Unit
         ];
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     * @param \Generated\Shared\Transfer\ShipmentTransfer $shipmentTransfer
-     * @param int $unitGrossPrice
-     *
-     * @return \Generated\Shared\Transfer\ItemTransfer
-     */
     protected function addNewItemWithShipmentAndShipmentPriceIntoQuoteTransfer(
         QuoteTransfer $quoteTransfer,
         ShipmentTransfer $shipmentTransfer,
@@ -185,9 +166,6 @@ class ShipmentPriceDecisionRuleTest extends Unit
         return $itemTransfer;
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\ClauseTransfer
-     */
     protected function createClauseTransferWithShipmentExpense(): ClauseTransfer
     {
         return (new ClauseBuilder([

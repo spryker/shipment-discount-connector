@@ -30,10 +30,6 @@ class ShipmentPriceDiscountDecisionRule implements ShipmentDiscountDecisionRuleI
      */
     protected $moneyFacade;
 
-    /**
-     * @param \Spryker\Zed\ShipmentDiscountConnector\Dependency\Facade\ShipmentDiscountConnectorToDiscountInterface $discountFacade
-     * @param \Spryker\Zed\ShipmentDiscountConnector\Dependency\Facade\ShipmentDiscountConnectorToMoneyInterface $moneyFacade
-     */
     public function __construct(
         ShipmentDiscountConnectorToDiscountInterface $discountFacade,
         ShipmentDiscountConnectorToMoneyInterface $moneyFacade

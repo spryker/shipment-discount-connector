@@ -40,12 +40,6 @@ class MethodDiscountDecisionRule extends MethodDiscountDecisionRuleWithMultiShip
         return $this->isSatisfiedItemShipmentMethod($expenseTransfer->getShipment(), $clauseTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShipmentTransfer $shipmentTransfer
-     * @param \Generated\Shared\Transfer\ClauseTransfer $clauseTransfer
-     *
-     * @return bool
-     */
     protected function isSatisfiedItemShipmentMethod(ShipmentTransfer $shipmentTransfer, ClauseTransfer $clauseTransfer): bool
     {
         if ($shipmentTransfer->getMethod() === null) {

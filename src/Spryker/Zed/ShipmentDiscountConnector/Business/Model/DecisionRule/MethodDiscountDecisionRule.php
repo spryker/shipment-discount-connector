@@ -24,9 +24,6 @@ class MethodDiscountDecisionRule implements ShipmentDiscountDecisionRuleInterfac
      */
     protected $discountFacade;
 
-    /**
-     * @param \Spryker\Zed\ShipmentDiscountConnector\Dependency\Facade\ShipmentDiscountConnectorToDiscountInterface $discountFacade
-     */
     public function __construct(ShipmentDiscountConnectorToDiscountInterface $discountFacade)
     {
         $this->discountFacade = $discountFacade;

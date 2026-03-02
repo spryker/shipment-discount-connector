@@ -25,11 +25,6 @@ class ShipmentPriceDiscountDecisionRule extends ShipmentPriceDiscountDecisionRul
      */
     protected $shipmentService;
 
-    /**
-     * @param \Spryker\Zed\ShipmentDiscountConnector\Dependency\Facade\ShipmentDiscountConnectorToDiscountInterface $discountFacade
-     * @param \Spryker\Zed\ShipmentDiscountConnector\Dependency\Facade\ShipmentDiscountConnectorToMoneyInterface $moneyFacade
-     * @param \Spryker\Zed\ShipmentDiscountConnector\Dependency\Service\ShipmentDiscountConnectorToShipmentServiceInterface $shipmentService
-     */
     public function __construct(
         ShipmentDiscountConnectorToDiscountInterface $discountFacade,
         ShipmentDiscountConnectorToMoneyInterface $moneyFacade,
@@ -74,12 +69,6 @@ class ShipmentPriceDiscountDecisionRule extends ShipmentPriceDiscountDecisionRul
         return $this->isSatisfiedPrice($expenseTransfer, $clauseTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ExpenseTransfer $expenseTransfer
-     * @param \Generated\Shared\Transfer\ClauseTransfer $clauseTransfer
-     *
-     * @return bool
-     */
     protected function isSatisfiedPrice(ExpenseTransfer $expenseTransfer, ClauseTransfer $clauseTransfer): bool
     {
         $moneyAmount = $this->moneyFacade->convertIntegerToDecimal($expenseTransfer->getUnitGrossPrice());
@@ -87,12 +76,6 @@ class ShipmentPriceDiscountDecisionRule extends ShipmentPriceDiscountDecisionRul
         return $this->discountFacade->queryStringCompare($clauseTransfer, (string)$moneyAmount);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     * @param \Generated\Shared\Transfer\ShipmentTransfer $shipmentTransfer
-     *
-     * @return \Generated\Shared\Transfer\ExpenseTransfer|null
-     */
     protected function findQuoteExpenseByShipment(QuoteTransfer $quoteTransfer, ShipmentTransfer $shipmentTransfer): ?ExpenseTransfer
     {
         $itemShipmentKey = $this->shipmentService->getShipmentHashKey($shipmentTransfer);

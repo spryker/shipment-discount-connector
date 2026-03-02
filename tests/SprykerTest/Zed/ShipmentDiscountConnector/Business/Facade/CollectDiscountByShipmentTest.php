@@ -119,9 +119,6 @@ class CollectDiscountByShipmentTest extends Unit
         }
     }
 
-    /**
-     * @return array
-     */
     public function collectDiscountByShipmentCarrierShouldUseQuoteShipmentExpensesDataProvider(): array
     {
         return [
@@ -131,9 +128,6 @@ class CollectDiscountByShipmentTest extends Unit
         ];
     }
 
-    /**
-     * @return array
-     */
     public function collectDiscountByShipmentMethodShouldUseQuoteShipmentExpensesDataProvider(): array
     {
         return [
@@ -143,9 +137,6 @@ class CollectDiscountByShipmentTest extends Unit
         ];
     }
 
-    /**
-     * @return array
-     */
     public function collectDiscountByShipmentPriceShouldUseQuoteShipmentExpensesDataProvider(): array
     {
         return [
@@ -155,9 +146,6 @@ class CollectDiscountByShipmentTest extends Unit
         ];
     }
 
-    /**
-     * @return array
-     */
     protected function getDataWith1ShipmentExpenseWithQuoteLevelShipment(): array
     {
         $quoteTransfer = (new QuoteBuilder())
@@ -172,9 +160,6 @@ class CollectDiscountByShipmentTest extends Unit
         return [$quoteTransfer, [100]];
     }
 
-    /**
-     * @return array
-     */
     protected function getDataWith1ShipmentExpenseWithItemLevelShipment(): array
     {
         $quoteTransfer = (new QuoteBuilder())->build();
@@ -183,9 +168,6 @@ class CollectDiscountByShipmentTest extends Unit
         return [$quoteTransfer, [100]];
     }
 
-    /**
-     * @return array
-     */
     protected function getDataWith2ShipmentExpensesWithItemLevelShipment(): array
     {
         $quoteTransfer = (new QuoteBuilder())->build();
@@ -195,12 +177,6 @@ class CollectDiscountByShipmentTest extends Unit
         return [$quoteTransfer, [100, 200]];
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     * @param int $price
-     *
-     * @return \Generated\Shared\Transfer\QuoteTransfer
-     */
     protected function addNewItemAndExpenseIntoQuoteTransfer(QuoteTransfer $quoteTransfer, int $price): QuoteTransfer
     {
         $shipmentTransfer = (new ShipmentBuilder())
@@ -223,9 +199,6 @@ class CollectDiscountByShipmentTest extends Unit
         return $quoteTransfer;
     }
 
-    /**
-     * @return \Spryker\Zed\ShipmentDiscountConnector\Business\ShipmentDiscountConnectorFacadeInterface
-     */
     protected function getFacadeWithMockedDecisionRules(): ShipmentDiscountConnectorFacadeInterface
     {
         $mockedMultiShipmentCarrierDiscountDecisionRule = $this->getMockBuilder(CarrierDiscountDecisionRule::class)->disableOriginalConstructor()->getMock();
@@ -270,9 +243,6 @@ class CollectDiscountByShipmentTest extends Unit
         return $facade;
     }
 
-    /**
-     * @return \Spryker\Zed\ShipmentDiscountConnector\Dependency\Service\ShipmentDiscountConnectorToShipmentServiceBridge
-     */
     protected function createShipmentDiscountConnectorToShipmentServiceBridge(): ShipmentDiscountConnectorToShipmentServiceBridge
     {
         return new ShipmentDiscountConnectorToShipmentServiceBridge($this->tester->getLocator()->shipment()->service());

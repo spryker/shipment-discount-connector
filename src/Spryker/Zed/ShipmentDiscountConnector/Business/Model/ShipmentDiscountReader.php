@@ -16,9 +16,6 @@ class ShipmentDiscountReader implements ShipmentDiscountReaderInterface
      */
     protected $shipmentFacade;
 
-    /**
-     * @param \Spryker\Zed\ShipmentDiscountConnector\Dependency\Facade\ShipmentDiscountConnectorToShipmentInterface $shipmentFacade
-     */
     public function __construct(ShipmentDiscountConnectorToShipmentInterface $shipmentFacade)
     {
         $this->shipmentFacade = $shipmentFacade;
