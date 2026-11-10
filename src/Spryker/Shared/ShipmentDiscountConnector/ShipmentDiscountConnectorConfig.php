@@ -7,9 +7,9 @@
 
 namespace Spryker\Shared\ShipmentDiscountConnector;
 
-use Spryker\Shared\Kernel\AbstractBundleConfig;
+use Spryker\Shared\Kernel\AbstractSharedConfig;
 
-class ShipmentDiscountConnectorConfig extends AbstractBundleConfig
+class ShipmentDiscountConnectorConfig extends AbstractSharedConfig
 {
     /**
      * Specification:
